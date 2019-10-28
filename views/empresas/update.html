@@ -1,0 +1,23 @@
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Editar</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div id="divUpdate">
+        <h1>Editar empresa</h1>
+        <form id="frmEdit" action="" method="post">
+            <input id = "id" type="hidden" v-model="id">
+            <input id = "activo" type="hidden" v-model="activo">
+            <label for="nombre">Nombre:</label>
+            <input id = "nombre" type="text" v-model="nombre">
+            <input type="button" value="Guardar" @click="update()">
+        </form>
+        <div :class="['alert', status == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}</div>
+    </div>
+</body>
+<script src="update.js"></script>
+</html>

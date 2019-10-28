@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Listar desde una tabla con PHP</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+</head>
+<body>
+<div id = "lista">
+<table>
+	<thead>
+		<th>Id</th>
+		<th>Nombre</th>
+		<th>Acciones</th>
+	</thead>
+	<tbody>
+
+		<tr v-for="item in lista">
+			<td>{{item.id}}</td>
+			<td>{{item.nombre}}</td>
+			<td>
+				<a :href="'update.html?id=' + item.id">Editar</a>
+				<a :href="'delete.html?id=' + item.id">Eliminar</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<script type="text/javascript" src="listar.js"></script>
+</body>
+</html>
