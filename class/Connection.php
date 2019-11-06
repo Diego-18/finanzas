@@ -4,7 +4,7 @@
  * Conexión con la base de datos
  */
 #namespace app\classes;
-
+require_once '../config.php';
 require_once $GLOBALS['CFG']->path . 'class/ErrorHandler.php';
 
 class Connection{
@@ -12,6 +12,18 @@ class Connection{
     private $connection;
     private $errorMessage = '';
     
+    private function setConnection_mysqli(){
+        
+        $conection_mysqli = new mysqli($GLOBALS['CFG']->dbhost, $GLOBALS['CFG']->dbuser, $GLOBALS['CFG']->dbpassword, $GLOBALS['CFG']->dbname, 3306);
+        
+        if ($conection_mysqli->connect_error) {
+            print_r($conection_mysqli->connect_error);
+            return FALSE;
+        }
+        return $conection_mysqli;
+    }
+
+
     public function __construct() {
        try {
         $dsn = "mysql:host={$GLOBALS['CFG']->dbhost};"
@@ -28,7 +40,7 @@ class Connection{
        $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        
     }
-   
+    
     public function getErrorMessage(){
         return $this->errorMessage;
     }
@@ -74,14 +86,42 @@ class Connection{
         ];
     }
     
+    public function multiQuery($query){
+        if (FALSE === $connection = $this->setConnection_mysqli()){
+            return FALSE;
+        }
+        $arrayResult = [];
+        $index = 0;
+        if ($connection->multi_query($query)) {
+            do {
+                /* almacenar primer juego de resultados */
+                if ($result = $connection->store_result()) {
+                    while ($row = $result->fetch_row()) {
+                        $arrayResult[$index][] = $row;
+                    }
+                    $result->free();
+                }
+                /* Si existe otro resultado, crear un nuevo índice para el array */
+                if ($connection->more_results()) {
+                    $index++;
+                }
+            } while ($connection->next_result());
+        }
+
+        /* cerrar conexión */
+        $connection->close();
+        return $arrayResult;
+    }
+    
 }
 
 #$connection = new connection();
 
 #Modelo se Select
-//if (!$data = $connection->executeQuery("SELECT * FROM empresa")){
+//if (!$data = $connection->executeQuery("SELECT * FROM empresas")){
 //    echo "Error " , var_dump($data);
 //}
+
 //
 //foreach ($data as $item){
 //    echo $item['empresa'];
@@ -115,4 +155,18 @@ class Connection{
 //    echo $connection->getErrorMessage();
 //} else {
 //    echo "Filas actualizadas: ". $result['rows'] ;
+//}
+
+#Modelo de multiQuery
+//$statement = "call multiquery();";
+//#$statement = "select now();";
+//if (FALSE === $result = $connection->multiQuery($statement)){
+//    echo 'Error';
+//    echo $connection->getErrorMessage();
+//} else {
+//    echo 'OK';
+//    echo '<pre>';
+//    #foreach ($result as $data){
+//        print_r($result);
+//    #}
 //}
