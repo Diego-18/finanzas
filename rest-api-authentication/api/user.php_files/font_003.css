@@ -1,0 +1,29 @@
+		/*=============================================================*/
+
+	@font-face {
+		font-family: "Whitney";
+		src: url("./Whitney/Whitney-Book_Web.woff2") format("woff2"),
+			url("./Whitney/Whitney-Book_Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Whitney";
+		font-style: italic;
+		src: url("./Whitney/Whitney-BookItal_Web.woff2") format("woff2"),
+			url("./Whitney/Whitney-BookItal_Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Whitney";
+		font-weight: bold;
+		src: url("./Whitney/Whitney-Semibld_Web.woff2") format("woff2"),
+			url("./Whitney/Whitney-Semibld_Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Whitney";
+		font-style: italic;
+		font-weight: bold;
+		src: url("./Whitney/Whitney-SemibldItal_Web.woff2") format("woff2"),
+			url("./Whitney/Whitney-SemibldItal_Web.woff") format("woff");
+	}

@@ -4,7 +4,7 @@
  * Conexión con la base de datos
  */
 #namespace app\classes;
-require_once '../config.php';
+
 require_once $GLOBALS['CFG']->path . 'class/ErrorHandler.php';
 
 class Connection{

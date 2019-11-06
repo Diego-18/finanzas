@@ -1,0 +1,35 @@
+	/*=============================================================*/
+
+	@font-face {
+		font-family: "Tiempos";
+		src: url("./Tiempos/TiemposTextWeb-Regular.eot?") format("eot"),
+		  url("./Tiempos/TiemposTextWeb-Regular.woff2") format("woff2"),
+			url("./Tiempos/TiemposTextWeb-Regular.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Tiempos";
+		font-style: italic;
+		src: url("./Tiempos/TiemposTextWeb-RegularItalic.eot?") format("eot"),
+		  url("./Tiempos/TiemposTextWeb-RegularItalic.woff2") format("woff2"),
+			url("./Tiempos/TiemposTextWeb-RegularItalic.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Tiempos";
+		font-weight: bold;
+		src: url("./Tiempos/TiemposTextWeb-Semibold.eot?") format("eot"),
+		  url("./Tiempos/TiemposTextWeb-Semibold.woff2") format("woff2"),
+			url("./Tiempos/TiemposTextWeb-Semibold.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Tiempos";
+		font-style: italic;
+		font-weight: bold;
+		src: url("./Tiempos/TiemposTextWeb-SemiboldItalic.eot?") format("eot"),
+		  url("./Tiempos/TiemposTextWeb-SemiboldItalic.woff2") format("woff2"),
+			url("./Tiempos/TiemposTextWeb-SemiboldItalic.woff") format("woff");
+	}
+
+

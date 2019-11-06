@@ -1,0 +1,31 @@
+	/*=============================================================*/
+
+	@font-face {
+		font-family: "Sentinel";
+		src: url("./Sentinel/Sentinel-Book_Web.woff2") format("woff2"),
+			url("./Sentinel/Sentinel-Book_Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Sentinel";
+		font-style: italic;
+		src: url("./Sentinel/Sentinel-BookItalic_Web.woff2") format("woff2"),
+			url("./Sentinel/Sentinel-BookItalic_Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Sentinel";
+		font-weight: bold;
+		src: url("./Sentinel/Sentinel-Semibold_Web.woff2") format("woff2"),
+			url("./Sentinel/Sentinel-Semibold_Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Sentinel";
+		font-style: italic;
+		font-weight: bold;
+		src: url("./Sentinel/Sentinel-SemiboldItalic_Web.woff2") format("woff2"),
+			url("./Sentinel/Sentinel-SemiboldItalic_Web.woff") format("woff");
+	}
+
+

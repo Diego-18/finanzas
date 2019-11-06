@@ -24,6 +24,7 @@ $CFG->dbpassword    = 'password';   // your database password
  * Ruta absoluta del proyecto
  */
 $CFG->path = '/www/finanzas/';
+$CFG->url = 'http://localhost/finanzas/';
 /*
  
 /*
@@ -62,7 +63,7 @@ date_default_timezone_set('America/Guayaquil');
  
 // variables used for jwt
 $CFG->key = "PASSWORD_KEY"; 
-$CFG->iss = "http://localhost/finanzas";
-$CFG->aud = "http://localhost/finanzas";
+$CFG->iss = $CFG->url;
+$CFG->aud = $CFG->url;
 $CFG->iat = 1356999524;
 $CFG->nbf = 1357000000;

@@ -1,0 +1,30 @@
+	/*=============================================================*/
+
+	@font-face {
+		font-family: "IdealSans";
+		src: url("./Ideal Sans/IdealSansSSm-Book_Web.woff2") format("woff2"),
+			url("./Ideal Sans/IdealSansSSm-Book_Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "IdealSans";
+		font-style: italic;
+		src: url("./Ideal Sans/IdealSansSSm-BookItalic_Web.woff2") format("woff2"),
+			url("./Ideal Sans/IdealSansSSm-BookItalic_Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "IdealSans";
+		font-weight: bold;
+		src: url("./Ideal Sans/IdealSansSSm-Semibold_Web.woff2") format("woff2"),
+			url("./Ideal Sans/IdealSansSSm-Semibold_Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "IdealSans";
+		font-style: italic;
+		font-weight: bold;
+		src: url("./Ideal Sans/IdealSansSSm-SemiboldItalic_Web.woff2") format("woff2"),
+			url("./Ideal Sans/IdealSansSSm-SemiboldItalic_Web.woff") format("woff");
+	}
+

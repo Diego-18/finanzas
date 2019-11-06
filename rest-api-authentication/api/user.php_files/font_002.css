@@ -1,0 +1,36 @@
+	/*=============================================================*/
+
+	@font-face {
+		font-family: "Blanco";
+		src:url("./Blanco/BlancoOSFWeb-Regular.eot?") format("eot"),
+			url("./Blanco/BlancoOSFWeb-Regular.woff2") format("woff2"),
+			url("./Blanco/BlancoOSFWeb-Regular.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Blanco";
+		font-weight: bold;
+		src:url("./Blanco/BlancoOSFWeb-Bold.eot?") format("eot"),
+			url("./Blanco/BlancoOSFWeb-Bold.woff2") format("woff2"),
+			url("./Blanco/BlancoOSFWeb-Bold.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Blanco";
+		font-style: italic;
+		src:url("./Blanco/BlancoOSFWeb-Italic.eot?") format("eot"),
+			url("./Blanco/BlancoOSFWeb-Italic.woff2") format("woff2"),
+			url("./Blanco/BlancoOSFWeb-Italic.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Blanco";
+		font-style: italic;
+		font-weight: bold;
+		src:url("./Blanco/BlancoOSFWeb-BoldItalic.eot?") format("eot"),
+			url("./Blanco/BlancoOSFWeb-BoldItalic.woff2") format("woff2"),
+			url("./Blanco/BlancoOSFWeb-BoldItalic.woff") format("woff");
+	}
+
+
+
