@@ -17,7 +17,7 @@ require_once $GLOBALS['CFG']->path . 'class/ErrorHandler.php';
 
 class UserLogic extends User {
     
-    public function setUser(string $value){
+    public function setUser($value){
         parent::setUser($value);
     }
     public function setEmail($value) {
@@ -26,7 +26,7 @@ class UserLogic extends User {
     public function setPassword($value) {
         parent::setPassword($value);
     }
-    public function setActivo(bool $value) {
+    public function setActivo($value) {
         parent::setActivo($value);
     }
 
@@ -41,21 +41,21 @@ class UserLogic extends User {
                 );
     }
     
-    public function get(int $id){
+    public function get($id){
         if(FALSE === parent::getData($id)){
             return FALSE;
         }
         return TRUE;
     }
     
-    public function getByUser(string $user){
+    public function getByUser($user){
         if(FALSE === parent::getByUser($user)){
             return FALSE;
         }
         return TRUE;
     }
     
-    public function validatePassword(string $password){
+    public function validatePassword($password){
         return parent::validatePassword($password);
     }
     

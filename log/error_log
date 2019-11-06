@@ -1,0 +1,1 @@
+2019-11-6 10:32:1|1045|SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)|C:\xampp\htdocs\finanzas\class\Connection.php-34|C:\xampp\htdocs\finanzas\models\User.model.php-86|C:\xampp\htdocs\finanzas\logic\User.logic.php-52|C:\xampp\htdocs\finanzas\login.php-24

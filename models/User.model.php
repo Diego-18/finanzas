@@ -25,16 +25,16 @@ class User {
     
     private $errorMessage = '';
     
-    public function setUser(string $value){
+    public function setUser($value){
         $this->user = $value;
     }
-    public function setPassword(string $value){
+    public function setPassword($value){
         $this->passsword = $value;
     }
-    public function setEmail(string $value){
+    public function setEmail($value){
         $this->email = $value;
     }
-    public function setActivo(bool $value){
+    public function setActivo($value){
         $this->activo = $value;
     }
     
@@ -58,7 +58,7 @@ class User {
         return $this->errorMessage();
     }
     
-    protected function getData(string $id){
+    protected function getData($id){
         $connection = new Connection();
         $query = "SELECT u.id, u.user"
                 . ", u.activo "
@@ -82,7 +82,7 @@ class User {
         }
     }
     
-    protected function getByUser(string $user){
+    protected function getByUser($user){
         $connection = new Connection();
         $query = "SELECT u.id, u.user"
                 . ", u.activo "
@@ -104,7 +104,7 @@ class User {
         }
     }
     
-    protected function validatePassword(string $password){
+    protected function validatePassword($password){
         $connection = new Connection();
         $query = "SELECT COUNT(id) as result FROM " . self::TABLE_NAME 
                 . " WHERE user = '{$this->user}' "
