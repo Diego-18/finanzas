@@ -64,5 +64,5 @@ date_default_timezone_set('America/Guayaquil');
 $CFG->key = "PASSWORD_KEY"; 
 $CFG->iss = "http://localhost/finanzas";
 $CFG->aud = "http://localhost/finanzas";
-$CFG->iat = numero_iat;
-$CFG->nbf = numero_nbf;
+$CFG->iat = 1356999524;
+$CFG->nbf = 1357000000;

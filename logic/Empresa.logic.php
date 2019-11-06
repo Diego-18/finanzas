@@ -23,11 +23,11 @@ class EmpresaLogic extends Empresa {
         }
     }
     
-    public function setNombre(string $value){
+    public function setNombre($value){
         parent::setNombre($value);
     }
 
-    public function setActivo(bool $value) {
+    public function setActivo($value) {
         parent::setActivo($value);
     }
 
@@ -42,7 +42,7 @@ class EmpresaLogic extends Empresa {
                 );
     }
     
-    public function get(int $id){
+    public function get($id){
         if(FALSE === parent::getData($id)){
             return FALSE;
         }

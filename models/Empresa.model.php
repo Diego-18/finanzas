@@ -19,15 +19,15 @@ class Empresa{
     
     private $errorMessage = '';
     
-    protected function setId(int $value){
+    protected function setId($value){
         $this->id = $value;
     }
     
-    protected function setNombre(string $value){
+    protected function setNombre($value){
         $this->nombre = $value;
     }
     
-    protected function setActivo(bool $value){
+    protected function setActivo($value){
         $this->activo = $value;
     }
     
@@ -47,7 +47,7 @@ class Empresa{
         return $this->errorMessage;
     }
     
-    protected function getData(string $id){
+    protected function getData($id){
         $connection = new Connection();
         $query = "SELECT e.id, e.nombre, e.activo "
                 . "FROM " . self::TABLE_NAME ." e "
