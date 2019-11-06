@@ -69,7 +69,7 @@ $token = [
 $jwt = JWT::encode($token,$GLOBALS['CFG']->key);
 session_start();
 $_SESSION['token'] = $jwt;
-print_r($jwt);exit;
+
 http_response_code(200);
 echo json_encode([
     "message" => "Successful login.",
