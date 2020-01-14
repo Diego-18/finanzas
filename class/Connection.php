@@ -14,7 +14,7 @@ class Connection{
     
     private function setConnection_mysqli(){
         
-        $conection_mysqli = new mysqli($GLOBALS['CFG']->dbhost, $GLOBALS['CFG']->dbuser, $GLOBALS['CFG']->dbpassword, $GLOBALS['CFG']->dbname, 3306);
+        $conection_mysqli = new mysqli($GLOBALS['CFG']->dbhost, $GLOBALS['CFG']->dbuser, $GLOBALS['CFG']->dbpassword, $GLOBALS['CFG']->dbname, $GLOBALS['CFG']->dbport);
         
         if ($conection_mysqli->connect_error) {
             print_r($conection_mysqli->connect_error);
@@ -27,10 +27,12 @@ class Connection{
     public function __construct() {
        try {
         $dsn = "mysql:host={$GLOBALS['CFG']->dbhost};"
-            . "dbname={$GLOBALS['CFG']->dbname}";
+            . "dbname={$GLOBALS['CFG']->dbname};"
+            . "port={$GLOBALS['CFG']->dbport}";
         $this->connection = new PDO($dsn
                     ,$GLOBALS['CFG']->dbuser
                     ,$GLOBALS['CFG']->dbpassword
+                    
                 );
        } catch (PDOException $e){
            ErrorHandler::register($e);

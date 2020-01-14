@@ -19,7 +19,7 @@ $CFG->dbhost    = 'localhost';  // eg 'localhost' or 'db.isp.com' or IP
 $CFG->dbname    = 'Finanzas';     // database name, eg moodle
 $CFG->dbuser    = 'user';   // your database username
 $CFG->dbpassword    = 'password';   // your database password
-
+$CFG->dbport = '3306'; // your database port
 /*
  * Ruta absoluta del proyecto
  */

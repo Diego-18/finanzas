@@ -6,14 +6,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
+    <div class="container">
+    <div id = "cabecera" >
+        <div class="py-5 text-center">
+            <h1>Crear nueva empresas</h1>
+            <a href="listar.html"> <button class="btn btn-default"> < Regresar a la lista de empresas</button></a>
+        </div>
+    </div>
+    <br>
     <div id="divInsert">
         <form action="#" method="POST">
-                <label for="nombre">Empresa:</label>
-                <input type="text" v-model="nombre" id="nombre">
-                <input type="button" value="Guardar" @click="insert()">
+            <div class="row">
+                <label for="nombre">Nombre de la empresa:</label>
+                <input class="form-control" type="text" v-model="nombre" id="nombre">
+            </div>
+            <hr class="my-5 pt-5 text-muted text-center text-small">
+            <input class="button btn-primary btn-lg btn-block" type="button" value="Guardar" @click="insert()">
         </form>
-        <div :class="['alert', !estado ? 'alert-success' : 'alert-danger']">{{message}}</div>
+        <hr class="mb-4">
+        <div :class="['alert', estado == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}</div>
+    </div>
     </div>
     <script type="text/javascript" src="insert.js"></script>
 </body>

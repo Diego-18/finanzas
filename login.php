@@ -16,32 +16,44 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 require_once $GLOBALS['CFG']->path . 'logic/User.logic.php';
 $path = $GLOBALS['CFG']->path;
 
-$userName = 'admin';
-$password = 'admin';
+#$userName = 'admin';
+#$password = 'admin';
+
+$username = $_POST['user'];
+$password = $_POST['password'];
 
 $user = new UserLogic();
 #user validation
-if (FALSE === $user->getByUser($userName)){
-    http_response_code(401);
-    echo json_encode("Usuario no encontrado");
+if (FALSE === $user->getByUser($username)){
+    #http_response_code(401);
     session_destroy();
     setcookie("PHPSESSID","",time()-3600);
+    echo json_encode(['status'=>"FAIL",
+        'message' => "Usuario no encontrado"]);
+   
     die();
 }
 
 #password validation
 if(FALSE === $user->validatePassword($password)){
-    http_response_code(401);
-    echo json_encode("Contraseña no válida");
+    #http_response_code(401);
+    
+    
+    echo json_encode(['status' => 'FAIL',
+                    'message' => "Contraseña no válida"]);
     if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(session_name(), '', time() - 42000,
         $params["path"], $params["domain"],
         $params["secure"], $params["httponly"]
     );
-}
-    session_destroy();
+    if (isset($_SESSION)){
+        session_destroy();
+    }
+    
     die();
+}
+    
 }
 
 // generate json web token
@@ -71,7 +83,7 @@ session_start();
 $_SESSION['token'] = $jwt;
 
 http_response_code(200);
-echo json_encode([
-    "message" => "Successful login.",
-    "jwt" => $jwt
+echo json_encode([ 'status' => 'OK',
+    "message" => "Successful login."
+    
 ]);

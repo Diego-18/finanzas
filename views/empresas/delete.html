@@ -7,12 +7,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container">
+    
+        <div class="py-5 text-center">
+            <h1>Eliminar empresa</h1>
+            <a href="listar.html"> <button class="btn btn-default"> < Regresar a la lista de empresas</button></a>
+        </div>
+    
     <div id="divDelete">
-        <h3>Confirmar eliminación permanente de la siguiente empresa:</h3>
+        <h4>Confirmar eliminación permanente de la siguiente empresa:</h4>
         <input type="hidden" v-model="id" id = "id">
-        <p>{{nombre}}</p>
-        <input type="button" value="Eliminar" @click="deleteItem()">
+        <h3>{{nombre}}</h3>
+        <input class="btn btn-danger btn-lg btn-block" type="button" value="Eliminar" @click="deleteItem()">
+        <hr class="mb-4">
         <div :class="['alert', status == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}</div>
+        
+        
+    </div>
     </div>
 </body>
 <script src="delete.js"></script>

@@ -7,18 +7,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <div id="divUpdate">
-        <h1>Editar empresa</h1>
-        <div><a href="listar.html">Regresar a la lista</a> </div>
-        
+    <div id="divUpdate" class="container">
+        <div class="py-5 text-center">
+            <h1>Editar empresa</h1>
+            <a href="listar.html"> <button class="btn btn-default"> < Regresar a la lista de empresas</button></a>
+        </div>
         <form id="frmEdit" action="" method="post">
             <input id = "id" type="hidden" v-model="id">
             <input id = "activo" type="hidden" v-model="activo">
-            <label for="nombre">Nombre:</label>
-            <input id = "nombre" type="text" v-model="nombre">
-            <input type="button" value="Guardar" @click="update()">
-            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nombre">Nombre de la empresa:</label>
+                    <input class="form-control" id = "nombre" type="text" v-model="nombre">
+                </div>
+                <hr class="my-5 pt-5 text-muted text-center text-small">
+                
+                <input class="button btn-primary btn-lg btn-block" type="button" value="Guardar" @click="update()">
+        </div>    
         </form>
+        <hr class="mb-4">
         <div :class="['alert', status == 'OK' ? 'alert-success' : 'alert-danger']">{{message}} </div>
     </div>
 </body>

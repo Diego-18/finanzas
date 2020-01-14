@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="divLogin">
+            <form class ="from_signin" data-bitwarden-watching ="1" action="#" method="POST">
+                <h3 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h3>
+                <p>Para realizar pruebas intente con usuario: "admin" y contraseña "admin"</p>
+                <label  for="user">Usuario:</label>
+                <input class="form-control" type="text" v-model="user" id="user">
+                <br>
+                <label  for="password">Password:</label>
+                <input class="form-control" type="password" v-model="password" id="password">
+                <div class="checkbox mb-3">
+                    <input class="btn btn-primary btn-lg btn-block" type="button" value="Enviar" @click = "validate()">
+                </div>
+            </form>
+            <div :class="['alert', estado == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}
+                <div>  <a href="index.php">Continuar</a> </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="login.js"></script>
+    </body>
+</html>

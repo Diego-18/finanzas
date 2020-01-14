@@ -2,13 +2,24 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>Listar desde una tabla con PHP</title>
+	<title>Lista de productos</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div id = "lista">
-<table>
+    <div class="container">
+    <div id = "cabecera" class="py-5 text-center">
+        
+        <h1>Lista de empresas</h1>
+        
+        <div class="btn-group mr-2">
+            <a href="insert.html"> <button class="btn btn-primary btn-lg">Ingresar nueva empresa</button></a>
+        </div>
+    </div>
+    <hr class="mb-4">
+<div id = "lista" class="table-responsive">
+<table class="table table-striped table-sm">
 	<thead>
 		<th>Id</th>
 		<th>Nombre</th>
@@ -26,6 +37,7 @@
 		</tr>
 	</tbody>
 </table>
+</div>
 </div>
 <script type="text/javascript" src="listar.js"></script>
 </body>
