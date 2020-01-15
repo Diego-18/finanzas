@@ -9,6 +9,16 @@
 
 <body>
     <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="../../index.html">Página principal <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>    
     <div id = "cabecera" >
         <div class="py-5 text-center">
             <h1>Crear nueva empresas</h1>
@@ -17,6 +27,9 @@
     </div>
     <br>
     <div id="divInsert">
+        <div v-if="this.estado != NULL" :class="['alert', estado == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}
+                
+            </div>
         <form action="#" method="POST">
             <div class="row">
                 <label for="nombre">Nombre de la empresa:</label>
@@ -26,7 +39,7 @@
             <input class="button btn-primary btn-lg btn-block" type="button" value="Guardar" @click="insert()">
         </form>
         <hr class="mb-4">
-        <div :class="['alert', estado == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}</div>
+        
     </div>
     </div>
     <script type="text/javascript" src="insert.js"></script>

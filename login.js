@@ -32,6 +32,19 @@ const app = new Vue({
         },
         
         validate: function(){
+            
+            if (!this.user){
+                this.estado = "FAIL"
+                this.message = "Error: El campo usuario no puede estar vacío"
+                return
+            }
+            
+            if (!this.password){
+                this.estado = "FAIL"
+                this.message = "Error: El campo password no puede estar vacío"
+                return
+            }
+            
             let formData = new FormData()
             formData.append('user', this.user)
             formData.append('password', this.password)

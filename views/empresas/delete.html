@@ -9,6 +9,17 @@
 <body>
     <div class="container">
     
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="../../index.html">Página principal <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>    
+        
         <div class="py-5 text-center">
             <h1>Eliminar empresa</h1>
             <a href="listar.html"> <button class="btn btn-default"> < Regresar a la lista de empresas</button></a>
@@ -16,11 +27,14 @@
     
     <div id="divDelete">
         <h4>Confirmar eliminación permanente de la siguiente empresa:</h4>
+        <div v-if="this.status != NULL" :class="['alert', status == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}
+                
+            </div>
         <input type="hidden" v-model="id" id = "id">
         <h3>{{nombre}}</h3>
         <input class="btn btn-danger btn-lg btn-block" type="button" value="Eliminar" @click="deleteItem()">
         <hr class="mb-4">
-        <div :class="['alert', status == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}</div>
+        
         
         
     </div>

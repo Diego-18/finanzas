@@ -14,23 +14,37 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
+        <div class='container'>
         <div id="divLogin">
-            <form class ="from_signin" data-bitwarden-watching ="1" action="#" method="POST">
-                <h3 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h3>
+            <div id = "cabecera" class="py-5 text-center">
+        
+                <h1>Ingreso al sistema</h1>
+                
                 <p>Para realizar pruebas intente con usuario: "admin" y contraseña "admin"</p>
+                
+            </div>
+            <hr class="mb-4">
+                
+                
+            <div v-if="this.estado != NULL" :class="['alert', estado == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}
+                <div v-if="this.estado == 'OK'">  <a  href="index.php">Continuar</a> </div>
+            </div>
+            
+            <form class ="from_signin" data-bitwarden-watching ="1" method="POST">
+                
                 <label  for="user">Usuario:</label>
-                <input class="form-control" type="text" v-model="user" id="user">
+                <input class="form-control" type="text" v-model="user" id="user" @keyup.enter="validate()">
                 <br>
                 <label  for="password">Password:</label>
-                <input class="form-control" type="password" v-model="password" id="password">
-                <div class="checkbox mb-3">
-                    <input class="btn btn-primary btn-lg btn-block" type="button" value="Enviar" @click = "validate()">
+                <input class="form-control" type="password" v-model="password" id="password" @keyup.enter="validate()">
+                <hr class="mb-4">
+                <div class="mb-3">
+                    <input class="btn btn-primary btn-lg btn-block" type="button" value="Ingresar" @click = "validate()" >
                 </div>
             </form>
-            <div :class="['alert', estado == 'OK' ? 'alert-success' : 'alert-danger']">{{message}}
-                <div>  <a href="index.php">Continuar</a> </div>
-            </div>
+            
         </div>
+        </div>    
         <script type="text/javascript" src="login.js"></script>
     </body>
 </html>
